@@ -25,7 +25,7 @@ class UserRequest extends FormRequest
     {
         $rules = [
             'email'    => 'required|email',
-            'password' => 'required|min6',
+            'password' => 'required|min:6',
         ];
 
         return $rules;
