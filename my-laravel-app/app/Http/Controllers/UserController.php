@@ -13,7 +13,10 @@ class UserController extends Controller
     {
         return view('user.signin');
     }
-    public function login(Request $request)
+    /**
+     * ログイン処理のアクション
+     */
+    public function login(UserRequest $request)
     {
         $email    = $request->input('email');
         $password = $request->input('password');
