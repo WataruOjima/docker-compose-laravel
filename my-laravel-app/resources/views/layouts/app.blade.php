@@ -18,6 +18,7 @@
 
  <!-- Styles -->
  <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+ <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 </head>
 <body>
  <div id="app">
