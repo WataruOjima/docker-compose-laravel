@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Http\Requests\UserRequest;
 class UserController extends Controller
 {
     /**
@@ -14,7 +15,7 @@ class UserController extends Controller
         return view('user.signin');
     }
     /**
-     * ログイン処理のアクション
+     * ログイン処理アクション
      */
     public function login(UserRequest $request)
     {
