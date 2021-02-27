@@ -13,5 +13,4 @@ class MicropostController extends Controller
     {
         return view('micropost.index');
     }
-
 }
