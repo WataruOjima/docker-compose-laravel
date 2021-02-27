@@ -48,7 +48,7 @@
              </li>
            @else
              <li class="nav-item">
-                 <a class="nav-link" href="">{{ __('ホーム') }}</a>
+                 <a class="nav-link" href="{{route('micropost.index')}}">{{ __('ホーム') }}</a>
              </li>
              <li class="nav-item">
                <a class="nav-link" href="">{{ __('ユーザ一覧') }}</a>
