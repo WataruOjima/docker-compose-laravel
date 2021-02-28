@@ -36,4 +36,18 @@ class UserController extends Controller
         Auth::logout();
         return redirect()->route('user.signin');
     }
+    /**
+     * ユーザ登録ページ表示アクション
+     */
+    public function create()
+    {
+        return view('user.create');
+    }
+    /**
+     * ユーザ登録処理アクション
+     */
+     public function store()
+     {
+        // ここに処理を書く
+     }
 }
