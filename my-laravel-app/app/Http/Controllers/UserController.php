@@ -69,4 +69,22 @@ class UserController extends Controller
         }
         return redirect()->route('micropost.index');
       }
+      /**
+       * ユーザ編集表示アクション
+       */
+      public function edit($id)
+      {
+          $user       = User::find($id);
+          $viewParams = [
+              'user'  = $user,
+          ];
+          return view('user.edit', $viewParams);
+      }
+      /**
+       * ユーザ更新アクション
+       */
+      public function update(UserRequest $request, $id)
+      {
+
+      }
 }
