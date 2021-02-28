@@ -29,4 +29,11 @@ class User extends Authenticatable
         'password',
         'admin_flg', 
     ];
+    /**
+     * ユーザ登録/更新
+     */
+    public function userSave($params)
+        $isResist = $this ->fill($params)->save()
+        return $isResist;
+    }
 }
