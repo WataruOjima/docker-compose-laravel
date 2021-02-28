@@ -78,6 +78,7 @@ class UserController extends Controller
           $viewParams = [
               'user' => $user,
           ];
+          $this->authorize('view', $user);
           return view('user.edit', $viewParams);
       }
       /**
@@ -85,6 +86,6 @@ class UserController extends Controller
        */
       public function update(UserRequest $request, $id)
       {
-
+          
       }
 }
