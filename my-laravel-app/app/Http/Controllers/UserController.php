@@ -50,7 +50,7 @@ class UserController extends Controller
      /**
       * ユーザ登録処理アクション
       */
-      public function store(Request $request)
+      public function store(UserRequest $request)
       {
         $user     = new User;
         $name     = $request->input('name');
