@@ -76,7 +76,7 @@ class UserController extends Controller
       {
           $user       = User::find($id);
           $viewParams = [
-              'user'  = $user,
+              'user' => $user,
           ];
           return view('user.edit', $viewParams);
       }
