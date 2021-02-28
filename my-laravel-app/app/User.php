@@ -33,7 +33,8 @@ class User extends Authenticatable
      * ユーザ登録/更新
      */
     public function userSave($params)
-        $isResist = $this ->fill($params)->save()
-        return $isResist;
+    {
+        $isRegist = $this->fill($params)->save();
+        return $isRegist;
     }
 }
