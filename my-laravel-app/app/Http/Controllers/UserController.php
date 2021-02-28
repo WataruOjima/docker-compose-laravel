@@ -61,7 +61,7 @@ class UserController extends Controller
             'email'     => $email,
             'password'  => Hash::make($password),
         ];
-        if (!$user->fill($params)->save()) {
+        if (!$user->userSave($params)) {
             return redirect()->route('user.create')->with('error_message', 'User registration failed');
         }
         if (!Auth::attempt(['email' => $email, 'password' => $password])) {
