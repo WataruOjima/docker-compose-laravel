@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Micropost; 
 
 class Micropost extends Model
 {
@@ -23,4 +24,13 @@ class Micropost extends Model
         'user_id',
         'content',
     ];
+
+    /**
+     * 投稿データを降順で全て取得
+     */
+    public static function getAll()
+    {
+        $microposts = Micropost::all()->sortByDesc('id')
+        return $microposts;
+    }
 }
