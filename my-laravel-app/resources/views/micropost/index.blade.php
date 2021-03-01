@@ -16,9 +16,27 @@
            </ul>
          </div>
          @endif
-       </div>
-     </div>
-   </div>
- </div>
+         <table class="table">
+          <thead>
+            <tr>
+              <th>ユーザー名</th>
+              <th>内容</th>
+              <th>投稿日時</th>
+            </tr>
+          </thead>
+        <tbody>
+         @foreach ($microposts as $micropost)
+          <tr>
+            <td>{{$micropost->user->name}}</td>
+            <td>{{$micropost->content}}</td>
+            <td>{{$micropost->created_at}}</td>
+          </tr>
+         @endforeach
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
 </div>
 @endsection
