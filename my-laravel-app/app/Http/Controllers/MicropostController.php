@@ -1,16 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Micropost; 
 
 use Illuminate\Http\Request;
 
 class MicropostController extends Controller
 {
-    /** 
+    /**
      * 投稿一覧表示アクション
      */
-    public function index()
-    {
-        return view('micropost.index');
-    }
+     public function index()
+     {
+         $microposts = Micropost::getAll();
+         $viewParams = [
+             'microposts' => $microposts,
+         ];
+         return view('micropost.index', $viewParams);
+     }
 }
