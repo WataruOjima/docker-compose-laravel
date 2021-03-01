@@ -26,7 +26,6 @@ class MicropostRequest extends FormRequest
         $rules = [
             'content' => 'required|max:200',
         ];
-
         return $rules;
     }
 }
