@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Micropost; 
+use Auth;
 
 use Illuminate\Http\Request;
 
@@ -26,4 +27,22 @@ class MicropostController extends Controller
       {
           return view('micropost.input');
       }
+
+      /**
+       * 投稿処理アクション
+       */
+      public function post(Request $request)
+      {
+          $content      =  $request->input('content');
+          $micropost    =  new Micropost;
+          $params = [
+              'user_id' =>  Auth::id(),
+              'content' =>  $content,
+          ];
+          if(!$micropost->micropostSave($params)) {
+              // 登録失敗
+              return redirect()->route('micropost.input')->with('error_message', 'Regist micropost failed');
+          }
+          return redirect()->route('micropost.index')->with('flash_message', 'Regist success!!');
+     }
 }
