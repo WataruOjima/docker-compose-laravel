@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Micropost; 
 use Auth;
-
+use App\Http\Requests\MicropostRequest;
 use Illuminate\Http\Request;
 
 class MicropostController extends Controller
@@ -31,7 +31,7 @@ class MicropostController extends Controller
       /**
        * 投稿処理アクション
        */
-      public function post(Request $request)
+      public function post(MicropostRequest $request)
       {
           $content      =  $request->input('content');
           $micropost    =  new Micropost;
