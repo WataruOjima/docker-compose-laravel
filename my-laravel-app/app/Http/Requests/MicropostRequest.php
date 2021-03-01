@@ -13,7 +13,7 @@ class MicropostRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,10 @@ class MicropostRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
+        $rules = [
+            'content' => 'required|max:200',
         ];
+
+        return $rules;
     }
 }
