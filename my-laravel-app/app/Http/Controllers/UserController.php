@@ -128,6 +128,7 @@ class UserController extends Controller
           }
           return redirect()->route('user.index')->with('flash_message', 'delete success!!');
       }
+      
       // private
       // ログインユーザが管理者であるかチェック
       private function adminCheck()
