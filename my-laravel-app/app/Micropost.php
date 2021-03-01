@@ -30,7 +30,7 @@ class Micropost extends Model
      */
     public static function getAll()
     {
-        $microposts = Micropost::all()->sortByDesc('id')
+        $microposts = Micropost::all()->sortByDesc('id');
         return $microposts;
     }
 }
