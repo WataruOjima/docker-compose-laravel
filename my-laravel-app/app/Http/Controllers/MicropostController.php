@@ -18,4 +18,12 @@ class MicropostController extends Controller
          ];
          return view('micropost.index', $viewParams);
      }
+
+     /**
+      * 投稿フォーム表示アクション
+      */
+      public function input()
+      {
+          return view('micropost.input');
+      }
 }
