@@ -131,7 +131,6 @@ class UserController extends Controller
 
       // private
       // ログインユーザが管理者であるかチェック
-
       private function adminCheck()
       {
           $adminFlg = Auth::user()->admin_flg;
