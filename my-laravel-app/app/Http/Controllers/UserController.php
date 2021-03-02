@@ -104,7 +104,6 @@ class UserController extends Controller
           }
           return redirect()->route('micropost.index')->with('flash_message', 'update success!!');
       }
-
       /**
        * ユーザ一覧表示アクション
        */
