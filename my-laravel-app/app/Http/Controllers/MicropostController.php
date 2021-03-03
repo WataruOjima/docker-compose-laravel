@@ -45,14 +45,4 @@ class MicropostController extends Controller
           }
           return redirect()->route('micropost.index')->with('flash_message', 'Regist success!!');
       }
-
-      /**
-       * 検索アクション
-       */
-      public function search()
-      {
-        $query = QueryParser::parse(new UsersSearch());
-        return redirect()->route('users.index', $query);
-      }
-
 }

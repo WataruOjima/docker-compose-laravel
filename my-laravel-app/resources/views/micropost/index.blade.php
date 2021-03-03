@@ -1,25 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<form action="{{ route('users.search') }}" method="post">
-    @csrf
-    <div class='row'>
-        <div class='col-md-6'>
-            <div class='form-group'>
-                <input name="name" />
-            </div>
-        </div>
-        <div class='col-md-6'>
-            <div class='form-group'>
-                <input name="address" />
-            </div>
-        </div>
-    </div>
-    <div style="text-align: center;">
-        <button class='btn-default'>検索</button>
-    </div>
-</form>
-
 <div class="container">
  <div class="row justify-content-center">
    <div class="col-md-8">
