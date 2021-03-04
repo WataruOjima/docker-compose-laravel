@@ -11,14 +11,27 @@ class MicropostController extends Controller
     /**
      * 投稿一覧表示アクション
      */
-     public function index()
-     {
-         $microposts = Micropost::getAll();
-         $viewParams = [
-             'microposts' => $microposts,
-         ];
-         return view('micropost.index', $viewParams);
+     public function index(Request $request)
+    {
+        if ($request->filled('keyword')) {
+            $keyword = $request->input('keyword');
+            $content = '検索キーワード: '.$keyword;
+            $microposts = Micropost::where('content', 'like', '%'.$keyword.'%')->get();
+        }else{
+            $content = "検索キーワードを入力してください。";
+            $microposts = Micropost::all();
+        }
+        return view('micropost.index', ['content' => $content, 'microposts' => $microposts]);
      }
+
+        //  $microposts = Post::orderBy('created_at', 'asc')->where(function ($query) {
+        //      // 検索機能
+        //      if ($search = request('search')) {
+        //         $query->where('content', 'LIKE', "%{$search}%")->orWhere('name','LIKE',"%{$search}%")
+        //         ;
+        //      }
+        // });
+     
 
      /**
       * 投稿フォーム表示アクション
@@ -44,5 +57,5 @@ class MicropostController extends Controller
               return redirect()->route('micropost.input')->with('error_message', 'Regist micropost failed');
           }
           return redirect()->route('micropost.index')->with('flash_message', 'Regist success!!');
-     }
+      }
 }
